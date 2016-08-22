@@ -30,7 +30,12 @@ module.exports = function (config) {
         }
     },
 
-    reporters: ['progress'],
+    reporters: ['mocha'],
+
+    mochaReporter: {
+      output: 'autowatch'
+    },
+
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
