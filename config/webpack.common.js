@@ -55,7 +55,11 @@ module.exports = {
         test: /\.scss$/,
         exclude: helpers.root('src', 'app'),
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss-loader?sourceMap!sass?sourceMap')
-      }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
     ]
   },
 

@@ -5,6 +5,13 @@ module.exports = {
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", "jsx"]
   },
 
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+    'cheerio': 'window'
+  },
+
   module: {
     preLoaders: [
       {
@@ -36,6 +43,10 @@ module.exports = {
       {
         test: /\.s?css$/,
         loader: 'null'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       },
       
     ]
