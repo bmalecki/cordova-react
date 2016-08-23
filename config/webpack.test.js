@@ -2,7 +2,10 @@ module.exports = {
   devtool: 'inline-source-map',
 
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", "jsx"]
+    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js", "jsx"],
+    alias: {
+        'sinon': 'sinon/pkg/sinon'
+    }
   },
 
   externals: {
@@ -13,6 +16,10 @@ module.exports = {
   },
 
   module: {
+    noParse: [
+        /node_modules\/sinon\//,
+    ],
+    
     preLoaders: [
       {
           test: /\.tsx?$/,
@@ -53,3 +60,4 @@ module.exports = {
 
   }
 }
+
