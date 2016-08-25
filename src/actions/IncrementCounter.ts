@@ -1,4 +1,4 @@
-export const INCREMENT_COUNTER = "INCREMENTT_COUNTER";
+export const INCREMENT_COUNTER = "INCREMENT_COUNTER";
 
 export const incrementCounter = () => {
   return {

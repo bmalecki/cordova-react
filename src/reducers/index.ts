@@ -1,9 +1,7 @@
-import { combineReducers } from 'redux'
-import secondElapsed from './secondElapsed'
-import visibleStats from './visibleStats'
+import { combineReducers } from 'redux';
+import secondElapsed from './secondElapsed';
 
 
 export default combineReducers({
-  secondElapsed,
-  visibleStats
+  secondElapsed
 });
