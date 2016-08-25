@@ -6,3 +6,4 @@ import 'redux-thunk';
 import 'react-redux';
 import 'react-router';
 import 'react-router-redux';
+import 'immutable';
