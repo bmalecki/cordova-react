@@ -30,6 +30,7 @@ module.exports =  webpackMerge(commonConfig, {
         warnings: false
       }
     }),
+
     new ExtractTextPlugin('[name].[hash].css'),
 
     new webpack.DefinePlugin({
