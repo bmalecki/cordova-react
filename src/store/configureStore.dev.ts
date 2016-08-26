@@ -1,12 +1,15 @@
 declare var module : any;
 declare var window : {devToolsExtension: Function};
 
-import { createStore } from 'redux';
+import { createStore, compose ,applyMiddleware} from 'redux';
 import rootReducer from '../reducers';
 
-export default function configureStore(preloadedState ?: any) {
-  const store = createStore(rootReducer, preloadedState,
-    window.devToolsExtension && window.devToolsExtension());
+export default function configureStore(middleware = [], preloadedState) {
+  
+  const store = createStore(rootReducer, preloadedState,compose(
+    applyMiddleware(...middleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  ));
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers    
